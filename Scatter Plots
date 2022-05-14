@@ -1,0 +1,45 @@
+#Import The Libraries
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Read The Excel File
+#Encode from utf-8 to Windows-1252
+df=pd.read_csv("C:/Users/keanu/OneDrive/Desktop/Ambient Parameters Final Project.csv", encoding="Windows-1252")
+
+#View The Data 43,000+ Cells
+df.head()
+df.tail()
+
+#Removes Missing Values
+df.dropna()
+
+#Creates Scatter Plot with a Regression Line For Ambient Temperature and Relative Humidity
+plt.title("Ambient Temperature Vs Relative Humidity", fontsize=16)
+sns.regplot(x="Ambient Temperature (¡F)", y="Relative Humidity (%)", data=df, ci=None)
+plt.show()
+
+#Creates Scatter Plot with a Regression Line For Ambient Temperature and Light Irradiance
+#plt.title("Ambient Temperature Vs Light Irradiance", fontsize=16)
+#sns.regplot(x="Ambient Temperature (¡F)", y="Light (Irradiance) (W/m2)", data=df, ci=None)
+#plt.show()
+
+#Creates Scatter Plot with a Regression Line For Ambient Temperature and Vapor Pressure Deficit
+#plt.title("Ambient Temperature Vs Vapor Pressure Deficit", fontsize=16)
+#sns.regplot(x="Ambient Temperature (¡F)", y="Vapor Pressure Deficit (kPa)", data=df, ci=None)
+#plt.show()
+
+#Creates Scatter Plot with a Regression Line For Relative Humidity and Light Irradiance
+#plt.title("Relative Humidity Vs Light Irradiance", fontsize=16)
+#sns.regplot(x="Relative Humidity (%)", y="Light (Irradiance) (W/m2)", data=df, ci=None)
+#plt.show()
+
+#Creates Scatter Plot with a Regression Line For Relative Humidity and Vapor Pressure Deficit
+#plt.title("Relative Humidity Vs Vapor Pressure Deficit", fontsize=16)
+#sns.regplot(x="Relative Humidity (%)", y="Vapor Pressure Deficit (kPa)", data=df, ci=None)
+#plt.show()
+
+#Creates Scatter Plot with a Regression Line for Light Irradiance and Vapor Pressure Deficit
+#plt.title("Light Irradiance Vs Vapor Pressure Deficit", fontsize=16)
+#sns.regplot(x="Light (Irradiance) (W/m2)", y="Vapor Pressure Deficit (kPa)", data=df, ci=None)
+#plt.show()
