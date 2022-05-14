@@ -1,0 +1,25 @@
+#Import The Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#Lambda Function
+dateparse = lambda dates: pd.datetime.strptime(dates, '%m/%d/%Y')
+
+#Read the CSV File
+#Encodes From UTF-8 to Windows-1252
+df=pd.read_csv("C:/Users/keanu/OneDrive/Desktop/Ambient Parameters Final Project.csv", encoding="Windows-1252", index_col="Date",parse_dates=True)
+
+#View The Data
+df.head()
+df.tail()
+
+#Drop Missing Values
+df.dropna()
+
+#Creates a Line Plot With All Parameters
+plt.title("Ambient Parameters", fontsize=20)
+plt.xlabel("Date", fontsize=14)
+sns.lineplot(data=df)
+plt.legend(loc=(0.79,1))
+plt.show()
